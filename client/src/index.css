@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+html,
+body {
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;
+  /* -webkit-scrollba-width: none; */
+  overflow-y: auto;
+}
+/* Global Scrollbar Styles */
+* {
+  /* WebKit Browsers (Chrome, Safari, Edge) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* Make the track (background) invisible */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); /* Slightly visible scrollbar */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Ensure it works on Firefox */
+html {
+  scrollbar-width: thin; /* Keep scrollbar but make it subtle */
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+@font-face {
+  font-family: nb;
+  src: url(/fonts/NBInternationalProBoo.woff2);
+}
+
+@font-face {
+  font-family: rj;
+  src: url(/fonts/Rejouice-Headline.woff2);
+}
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.heart {
+  display: inline-block; /* Ensures the transform animation works correctly */
+  position: relative; /* Prevents affecting surrounding layout */
+  font-family: nb !important;
+  animation: beat 1.2s infinite ease-in-out;
+  transform-origin: center;
+  will-change: transform; /* Optimizes performance */
+}
+/* Add these global styles */
+/* .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+} */
+
+.horizontal-panel {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.ff {
+  font-family: rj !important;
+}
+.sp {
+  font-family: rj;
+  display: inline-block;
+}
+.glow-effect {
+  animation: glow 1.5s infinite alternate;
+}
+#footer-text span {
+  font-family: rj;
+  display: inline-block;
+}
+
+.fixed-shadow {
+  box-shadow: 0px 0px 15px 0px rgba(255, 0, 79, 0.6) !important;
+  transition: none !important;
+}
+.alber {
+  font-family: "Albert Sans", "Courier New";
+  font-weight: 300;
+  font-style: normal !important;
+  line-height: 54px;
+}
+
+.fonter {
+  font-family: "Albert Sans", "Courier New";
+  font-weight: 300;
+  font-style: normal !important;
+  line-height: 54px;
+}
+/* WebKit Browsers (Chrome, Safari, Edge) */
+.no-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Make the track (background) invisible */
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Transparent scrollbar with slight visibility */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: thin; /* Keep scrollbar but make it subtle */
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* Thumb color and transparent track */
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+    0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.romantic-float {
+  animation: romantic-float 8s infinite linear;
+}
+
+@keyframes romantic-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.romantic-time-box {
+  width: 3.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.romantic-time-box-past {
+  background: linear-gradient(145deg, #ff758c 0%, #ff7eb3 100%);
+  color: #8a1a3a;
+}
+
+.romantic-time-box-future {
+  background: linear-gradient(145deg, #fff0f3 0%, #ffdde6 100%);
+  color: #8a1a3a;
+}
+
+.romantic-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #8a1a3a;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 768px) {
+  .romantic-time-box {
+    width: 4.5rem;
+    height: 6rem;
+    font-size: 3rem;
+  }
+  .romantic-label {
+    font-size: 1.1rem;
+  }
+}
+
+.box {
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.hero h1 {
+  will-change: transform, opacity;
+}
